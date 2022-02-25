@@ -6,8 +6,7 @@ public class Star : MonoBehaviour
 {
     const float speed = 3;
 
-    float width;
-    float height;
+    Level level;
 
     float distanceFromCamera;
     float perceivedSpeed;
@@ -17,12 +16,12 @@ public class Star : MonoBehaviour
     void Start()
     {
         // get width and height of visible area
-        height = Camera.main.orthographicSize;
-        width = height * Camera.main.aspect;
+
+        level = GetComponentInParent<Level>();
 
         transform.position = new Vector3(
-            Random.Range(-width, width),
-            Random.Range(-height, height),
+            Random.Range(-level.width, level.width),
+            Random.Range(-level.height, level.height),
             1
         );
 
@@ -43,11 +42,11 @@ public class Star : MonoBehaviour
         );
 
         // wrap around
-        if (transform.position.y < -height)
+        if (transform.position.y < -level.height)
         {
             transform.position = new Vector3(
                 transform.position.x,
-                height,
+                level.height,
                 1
             );  
         }

@@ -11,6 +11,11 @@ public class Asteroid : BaseBullet
     Vector3 moveDirectionVector;
     float moveSpeed;
 
+    public PlayerShip player;
+
+    float width;
+    float height;
+
     void Start()
     {
         damage = 10;
@@ -18,17 +23,32 @@ public class Asteroid : BaseBullet
         rotationSpeed = Random.Range(50F, 200F);
         moveSpeed = Random.Range(2.5F, 10F);
 
+        height = Camera.main.orthographicSize;
+        width = height * Camera.main.aspect;
+
+        // rotate CC or CCW?
         switch (Random.Range(0, 2))
         {
-            case 0: rotationDirection = -1; break;
-            case 1: rotationDirection = 1; break;
+            case 0: rotationDirection = -1; break; // CC
+            case 1: rotationDirection = 1; break;  // CCW
         }
 
-        float moveDirection = Random.Range(0, 2 * 3.1415926F);
+
+        float moveDirection = Random.Range(0, 360 * Mathf.Deg2Rad);
         moveDirectionVector = new Vector2(
             Mathf.Cos(moveDirection),
             Mathf.Sin(moveDirection)
         );
+
+        // spawn from left or right?
+        if (moveDirectionVector.x > 0)
+        {
+            transform.position = new Vector2(-width, Random.Range(-height, height));
+        }
+        else
+        {
+            transform.position = new Vector2(width, Random.Range(-height, height));
+        }
     }
 
     // Update is called once per frame

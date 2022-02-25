@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  level: {fileID: 1285785985165453003, guid: 5f25ac37e269df34eb549e7127409720, type: 3}
+  player: {fileID: 5086159493065472942, guid: 104937d6b183d704e864671a8fc6a159, type: 3}
 --- !u!58 &6090696528343229780
 CircleCollider2D:
   m_ObjectHideFlags: 0
