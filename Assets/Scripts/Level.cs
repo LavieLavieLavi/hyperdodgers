@@ -25,8 +25,11 @@ public class Level : MonoBehaviour
     const float bombSpawnInterval = 3; // every N seconds, a striker will spawn
     public float bombSpawnTimeLeft;
 
-    
+    const float InvSpawnInterval = 3; // every N seconds, a striker will spawn
+    public float InvSpawnTimeLeft;
+
     public Bomb bomb;
+    public Invincible invincible;
 
     void Start()
     {
@@ -72,6 +75,13 @@ public class Level : MonoBehaviour
             bombSpawnTimeLeft = bombSpawnInterval;
         }
 
+        if (InvSpawnTimeLeft < 0)
+        {
+            Instantiate(invincible);
+            InvSpawnTimeLeft = InvSpawnInterval;
+        }
+
         bombSpawnTimeLeft -= Time.deltaTime;
+        InvSpawnTimeLeft -= Time.deltaTime;
     }
 }

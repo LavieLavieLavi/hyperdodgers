@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: level
       objectReference: {fileID: 0}
+    - target: {fileID: 1285785985165453000, guid: 5f25ac37e269df34eb549e7127409720, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1285785985165453002, guid: 5f25ac37e269df34eb549e7127409720, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -266,7 +270,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2378411301146735922, guid: 0602ce3067b1bc343a1ba29d510db434, type: 3}
     - target: {fileID: 1285785985165453003, guid: 5f25ac37e269df34eb549e7127409720, type: 3}
+      propertyPath: invincible
+      value: 
+      objectReference: {fileID: 2667245995396898075, guid: a5c32c3227e2daa47be2be51942ac1c4, type: 3}
+    - target: {fileID: 1285785985165453003, guid: 5f25ac37e269df34eb549e7127409720, type: 3}
       propertyPath: bombSpawnTimeLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1285785985165453003, guid: 5f25ac37e269df34eb549e7127409720, type: 3}
+      propertyPath: asteroidSpawnTimeLeft
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

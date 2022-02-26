@@ -13,18 +13,28 @@ public class PlayerShip : MonoBehaviour
 
     float health = 100; // temporary
 
+    const float EffectTimer = 2; 
+    public float Inv;
+
     void Start()
     {
         transform.position = new Vector2(0, 0);
+        Inv = EffectTimer;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Bullet")
-        {
-            Destroy(this.gameObject);
-            SceneManager.LoadScene(0);
+        {           
+                Destroy(this.gameObject);
+                SceneManager.LoadScene(0);           
         }
+
+        if (col.gameObject.tag == "Invincibility")
+        {
+            Inv = EffectTimer;   
+        }
+
 
     }
 
@@ -42,5 +52,17 @@ public class PlayerShip : MonoBehaviour
         // update rotation
         float deltaX = (transform.position.x - previousPositionX)/Time.deltaTime; // change in x per SECOND (NOT per frame)
         transform.rotation = Quaternion.Euler(0, 0, -Mathf.Clamp(deltaX, minRotation, maxRotation));
+
+        if (Inv > 0)
+        {
+            this.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else
+        {
+            this.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        Inv -= Time.deltaTime;
+        Debug.Log("Timer: "+ Inv);
     }
 }
