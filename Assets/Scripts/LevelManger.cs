@@ -9,4 +9,14 @@ public class LevelManger : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    public void Customize()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
