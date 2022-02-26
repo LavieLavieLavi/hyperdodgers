@@ -77,7 +77,7 @@ public class Level : MonoBehaviour
             battleshipSpawnTimeLeft = battleshipSpawnInterval;
         }
 
-        if (kamikazeSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 0)
+        if (kamikazeSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 4)
         {
             Instantiate(kamikaze);
             kamikazeSpawnTimeLeft = kamikazeSpawnInterval;
