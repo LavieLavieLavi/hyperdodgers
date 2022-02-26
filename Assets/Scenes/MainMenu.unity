@@ -1195,9 +1195,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7956089121029863029, guid: ad89f3dc4cc9e044184578d1ef880b5a, type: 3}
+      propertyPath: bomb
+      value: 
+      objectReference: {fileID: 2378411301146735922, guid: 0602ce3067b1bc343a1ba29d510db434, type: 3}
+    - target: {fileID: 7956089121029863029, guid: ad89f3dc4cc9e044184578d1ef880b5a, type: 3}
       propertyPath: asteroid
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6670546279869140112, guid: b6be4e30157d73948be3cc38edec37ca, type: 3}
     - target: {fileID: 7956089121029863029, guid: ad89f3dc4cc9e044184578d1ef880b5a, type: 3}
       propertyPath: m_Enabled
       value: 1
