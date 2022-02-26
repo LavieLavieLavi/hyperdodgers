@@ -14,15 +14,19 @@ public class Level : MonoBehaviour
     const float strikerSpawnInterval = 3; // every N seconds, a striker will spawn
     public float strikerSpawnTimeLeft;
 
-    const float battleshipSpawnInterval = 5; // every N seconds, a striker will spawn
+    const float battleshipSpawnInterval = 5; // every N seconds, a battleship will spawn
     public float battleshipSpawnTimeLeft;
+
+    const float kamikazeSpawnInterval = 2; // every N seconds, a kamikaze will spawn
+    public float kamikazeSpawnTimeLeft;
 
     public Asteroid asteroid;
     public Striker striker;
     public Battleship battleship;
+    public Kamikaze kamikaze;
 
     //Powerups
-    const float bombSpawnInterval = 3; // every N seconds, a striker will spawn
+    const float bombSpawnInterval = 3; // every N seconds, a bomb will spawn
     public float bombSpawnTimeLeft;
 
     const float InvSpawnInterval = 3; // every N seconds, a striker will spawn
@@ -39,6 +43,7 @@ public class Level : MonoBehaviour
         asteroidSpawnTimeLeft = asteroidSpawnInterval;
         strikerSpawnTimeLeft = strikerSpawnInterval;
         battleshipSpawnTimeLeft = battleshipSpawnInterval;
+        kamikazeSpawnTimeLeft = kamikazeSpawnInterval;
     }
 
     // Update is called once per frame
@@ -64,9 +69,16 @@ public class Level : MonoBehaviour
             battleshipSpawnTimeLeft = battleshipSpawnInterval;
         }
 
+        if (kamikazeSpawnTimeLeft < 0)
+        {
+            Instantiate(kamikaze);
+            kamikazeSpawnTimeLeft = kamikazeSpawnInterval;
+        }
+
         asteroidSpawnTimeLeft -= Time.deltaTime;
         strikerSpawnTimeLeft -= Time.deltaTime;
         battleshipSpawnTimeLeft -= Time.deltaTime;
+        kamikazeSpawnTimeLeft -= Time.deltaTime;
 
         //Powerups
         if (bombSpawnTimeLeft < 0)

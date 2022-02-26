@@ -49,9 +49,13 @@ MonoBehaviour:
   asteroidSpawnTimeLeft: 0
   strikerSpawnTimeLeft: 0
   battleshipSpawnTimeLeft: 0
+  kamikazeSpawnTimeLeft: 0
   asteroid: {fileID: 6670546279869140112, guid: b6be4e30157d73948be3cc38edec37ca, type: 3}
   striker: {fileID: 6769735880834568555, guid: 1965dec75dfb8254ca69889c846fdff9, type: 3}
   battleship: {fileID: 5733685396292756327, guid: be2baae56b7bd264a8143a9dc5bf8468, type: 3}
+  kamikaze: {fileID: 6772982706409931941, guid: 80e936d4fa40ced46a8de94b2c5a6248, type: 3}
+  bombSpawnTimeLeft: 0
+  bomb: {fileID: 2378411301146735922, guid: 0602ce3067b1bc343a1ba29d510db434, type: 3}
 --- !u!1 &1285785986025425523
 GameObject:
   m_ObjectHideFlags: 0
