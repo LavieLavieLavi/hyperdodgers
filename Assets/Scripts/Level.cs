@@ -13,8 +13,12 @@ public class Level : MonoBehaviour
     const float strikerSpawnInterval = 3; // every N seconds, a striker will spawn
     public float strikerSpawnTimeLeft;
 
+    const float battleshipSpawnInterval = 5; // every N seconds, a striker will spawn
+    public float battleshipSpawnTimeLeft;
+
     public Asteroid asteroid;
     public Striker striker;
+    public Battleship battleship;
 
     void Start()
     {
@@ -23,6 +27,7 @@ public class Level : MonoBehaviour
 
         asteroidSpawnTimeLeft = asteroidSpawnInterval;
         strikerSpawnTimeLeft = strikerSpawnInterval;
+        battleshipSpawnTimeLeft = battleshipSpawnInterval;
     }
 
     // Update is called once per frame
@@ -40,10 +45,14 @@ public class Level : MonoBehaviour
             strikerSpawnTimeLeft = strikerSpawnInterval;
         }
 
-        asteroidSpawnTimeLeft -= Time.deltaTime;
-        //Updated upstream
-        strikerSpawnTimeLeft -= Time.deltaTime;
+        if (battleshipSpawnTimeLeft < 0)
+        {
+            Instantiate(battleship);
+            battleshipSpawnTimeLeft = battleshipSpawnInterval;
+        }
 
-        //Stashed changes
+        asteroidSpawnTimeLeft -= Time.deltaTime;
+        strikerSpawnTimeLeft -= Time.deltaTime;
+        battleshipSpawnTimeLeft -= Time.deltaTime;
     }
 }

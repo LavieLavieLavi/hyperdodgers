@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Striker : MonoBehaviour
+public class Battleship : MonoBehaviour
 {
     float duration = 7.5F; // amount of time in screen before disappearing 
     float timeLeft;
 
-    float shootInterval = 2F;
+    float shootInterval = 3F;
     float shootTimeLeft;
 
     float width;
     float height;
 
     float smoothing = 0.1F;
+
+    int bulletPerShot = 5;
 
     Vector2 desiredPosition;
     Vector3 bulletSpawnPosition;
@@ -40,11 +42,10 @@ public class Striker : MonoBehaviour
 
         bulletSpawnPosition = new Vector2(0, -1);
     }
-
+    
     void Shoot()
     {
-        bullet.direction = new Vector2(0, -1);
-        Instantiate(bullet, bulletSpawnPosition + transform.position, new Quaternion());
+        
     }
 
     // Update is called once per frame
