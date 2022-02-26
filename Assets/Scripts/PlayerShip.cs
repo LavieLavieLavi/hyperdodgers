@@ -16,6 +16,8 @@ public class PlayerShip : MonoBehaviour
     const float EffectTimer = 2; 
     public float Inv;
 
+    bool protect
+
     void Start()
     {
         transform.position = new Vector2(0, 0);
@@ -25,14 +27,23 @@ public class PlayerShip : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Bullet")
-        {           
+        {
+            if (protect)
+            {
+                protect = false;
+            }
+            else
+            {
                 Destroy(this.gameObject);
-                SceneManager.LoadScene(0);           
+                SceneManager.LoadScene(0);
+            }
+         
         }
 
         if (col.gameObject.tag == "Invincibility")
         {
-            Inv = EffectTimer;   
+            protect = true;
+            Debug.Log("Protected");
         }
 
 
@@ -53,16 +64,5 @@ public class PlayerShip : MonoBehaviour
         float deltaX = (transform.position.x - previousPositionX)/Time.deltaTime; // change in x per SECOND (NOT per frame)
         transform.rotation = Quaternion.Euler(0, 0, -Mathf.Clamp(deltaX, minRotation, maxRotation));
 
-        if (Inv > 0)
-        {
-            this.GetComponent<BoxCollider2D>().enabled = false;
-        }
-        else
-        {
-            this.GetComponent<BoxCollider2D>().enabled = true;
-        }
-
-        Inv -= Time.deltaTime;
-        Debug.Log("Timer: "+ Inv);
     }
 }
