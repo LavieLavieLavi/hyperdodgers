@@ -25,6 +25,7 @@ public class PlayerShip : MonoBehaviour
             Destroy(this.gameObject);
             SceneManager.LoadScene(0);
         }
+
     }
 
     void Update()

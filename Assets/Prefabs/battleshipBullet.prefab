@@ -79,6 +79,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: battleshipBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 9152904470846786955, guid: 27a0b1f6c1e04fd4a853563bd9d27b85, type: 3}
+      propertyPath: direction.x
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152904470846786955, guid: 27a0b1f6c1e04fd4a853563bd9d27b85, type: 3}
+      propertyPath: direction.y
+      value: -0.70710677
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7076272682422345222, guid: 27a0b1f6c1e04fd4a853563bd9d27b85, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 27a0b1f6c1e04fd4a853563bd9d27b85, type: 3}

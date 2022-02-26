@@ -7,6 +7,7 @@ public class Level : MonoBehaviour
     public float width;
     public float height;
 
+    //Enemies
     const float asteroidSpawnInterval = 2; // every N seconds, an asteroid will spawn
     public float asteroidSpawnTimeLeft;
 
@@ -19,6 +20,13 @@ public class Level : MonoBehaviour
     public Asteroid asteroid;
     public Striker striker;
     public Battleship battleship;
+
+    //Powerups
+    const float bombSpawnInterval = 3; // every N seconds, a striker will spawn
+    public float bombSpawnTimeLeft;
+
+    
+    public Bomb bomb;
 
     void Start()
     {
@@ -33,6 +41,8 @@ public class Level : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Enemies
         if (asteroidSpawnTimeLeft < 0)
         {
             Instantiate(asteroid);
@@ -54,5 +64,14 @@ public class Level : MonoBehaviour
         asteroidSpawnTimeLeft -= Time.deltaTime;
         strikerSpawnTimeLeft -= Time.deltaTime;
         battleshipSpawnTimeLeft -= Time.deltaTime;
+
+        //Powerups
+        if (bombSpawnTimeLeft < 0)
+        {
+            Instantiate(bomb);
+            bombSpawnTimeLeft = bombSpawnInterval;
+        }
+
+        bombSpawnTimeLeft -= Time.deltaTime;
     }
 }
