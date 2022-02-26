@@ -9,8 +9,12 @@ public class Level : MonoBehaviour
 
     const float asteroidSpawnInterval = 2; // every N seconds, an asteroid will spawn
     public float asteroidSpawnTimeLeft;
-    
+
+    const float strikerSpawnInterval = 3; // every N seconds, a striker will spawn
+    public float strikerSpawnTimeLeft;
+
     public Asteroid asteroid;
+    public Striker striker;
 
     void Start()
     {
@@ -18,6 +22,7 @@ public class Level : MonoBehaviour
         width = height * Camera.main.aspect;
 
         asteroidSpawnTimeLeft = asteroidSpawnInterval;
+        strikerSpawnTimeLeft = strikerSpawnInterval;
     }
 
     // Update is called once per frame
@@ -29,6 +34,13 @@ public class Level : MonoBehaviour
             asteroidSpawnTimeLeft = asteroidSpawnInterval;
         }
 
+        if (strikerSpawnTimeLeft < 0)
+        {
+            Instantiate(striker);
+            strikerSpawnTimeLeft = strikerSpawnInterval;
+        }
+
         asteroidSpawnTimeLeft -= Time.deltaTime;
+        strikerSpawnTimeLeft -= Time.deltaTime;
     }
 }
