@@ -47,7 +47,9 @@ MonoBehaviour:
   width: 0
   height: 0
   asteroidSpawnTimeLeft: 0
-  asteroid: {fileID: 0}
+  strikerSpawnTimeLeft: 0
+  asteroid: {fileID: 6670546279869140112, guid: b6be4e30157d73948be3cc38edec37ca, type: 3}
+  striker: {fileID: 6769735880834568555, guid: 1965dec75dfb8254ca69889c846fdff9, type: 3}
 --- !u!1 &1285785986025425523
 GameObject:
   m_ObjectHideFlags: 0
