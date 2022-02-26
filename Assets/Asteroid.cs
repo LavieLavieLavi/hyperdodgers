@@ -7,8 +7,9 @@ public class Asteroid : BaseBullet
     float degrees;
     float rotationSpeed;
     int rotationDirection;
-    
+
     Vector3 moveDirectionVector;
+    private Vector2 screenBounds;
     float moveSpeed;
 
     public PlayerShip player;
@@ -60,5 +61,13 @@ public class Asteroid : BaseBullet
         // rotate
         degrees += rotationSpeed * rotationDirection * Time.deltaTime;
         transform.rotation = Quaternion.Euler(0, 0, degrees);
+
+
+        // destroyed if ofscreen
+        if (transform.position.x > width*2 || transform.position.y > height * 2 || transform.position.x < -width * 2 || transform.position.y < -height * 2)
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 }

@@ -19,7 +19,7 @@ public class PlayerShip : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        
+        Debug.Log("Collision Detection");
     }
 
     void Update()
