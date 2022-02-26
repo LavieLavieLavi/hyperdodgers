@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class Level : MonoBehaviour
     public Bomb bomb;
     public Invincible invincible;
 
+    public float timeSinceStart;
+
+    int currentScene;
+
     void Start()
     {
         height = Camera.main.orthographicSize;
@@ -44,6 +49,8 @@ public class Level : MonoBehaviour
         strikerSpawnTimeLeft = strikerSpawnInterval;
         battleshipSpawnTimeLeft = battleshipSpawnInterval;
         kamikazeSpawnTimeLeft = kamikazeSpawnInterval;
+
+        currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -95,5 +102,10 @@ public class Level : MonoBehaviour
 
         bombSpawnTimeLeft -= Time.deltaTime;
         InvSpawnTimeLeft -= Time.deltaTime;
+
+        if (currentScene != 0)
+        {
+            timeSinceStart += Time.deltaTime;
+        }
     }
 }
