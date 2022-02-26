@@ -42,13 +42,14 @@ public class Asteroid : BaseBullet
         );
 
         // spawn from left or right?
+        float padding = 2;
         if (moveDirectionVector.x > 0)
         {
-            transform.position = new Vector2(-width, Random.Range(-height, height));
+            transform.position = new Vector2(-width - padding, Random.Range(-height, height));
         }
         else
         {
-            transform.position = new Vector2(width, Random.Range(-height, height));
+            transform.position = new Vector2(width + padding, Random.Range(-height, height));
         }
     }
 
