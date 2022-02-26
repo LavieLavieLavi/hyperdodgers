@@ -8,7 +8,7 @@ public class PlayerShip : MonoBehaviour
     Vector2 newPosition;
     float smoothing = 0.00005F; // lol
 
-    const float minRotation = -22.5F;
+    const float minRotation = -30.0F;
     const float maxRotation = -minRotation;
 
     float health = 100; // temporary

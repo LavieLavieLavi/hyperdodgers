@@ -9,7 +9,7 @@ public class Kamikaze : MonoBehaviour
 
     float speed = 14;
 
-    Vector3 moveDirection;
+    public Vector3 moveDirection;
 
     float timeSinceSpawn;
 
@@ -23,22 +23,22 @@ public class Kamikaze : MonoBehaviour
         switch (Random.Range(0, 3))
         {
             // left
-            case 0: transform.position = new Vector2(-width - 2, Random.Range(-height, height)); break;
+            case 0: transform.position = new Vector2(-width - padding, Random.Range(-height, height)); break;
             
             // right
-            case 1: transform.position = new Vector2(width + 2, Random.Range(-height, height)); break;
+            case 1: transform.position = new Vector2(width + padding, Random.Range(-height, height)); break;
             
             // top
-            case 2: transform.position = new Vector2(Random.Range(-width, width), height + 2); break;
+            case 2: transform.position = new Vector2(Random.Range(-width, width), height + padding); break;
 
             // hindi magsspawn sa bottom kasi that would be annoying
         }
-
+        
         Vector3 targetPosition;
-        Vector2 relativePosition;
         try
         {
             targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            Debug.Log(targetPosition);
         }
         catch (System.NullReferenceException e)
         {
@@ -47,8 +47,10 @@ public class Kamikaze : MonoBehaviour
                 Random.Range(-height, height)
             );
         }
-        relativePosition = targetPosition - transform.position;
+
+        Vector2 relativePosition = targetPosition - transform.position;
         moveDirection = relativePosition.normalized;
+        transform.rotation = Quaternion.Euler(0, 0, (Mathf.Atan(moveDirection.y/moveDirection.x) * Mathf.Rad2Deg) - 90);
     }
 
     // Update is called once per frame
