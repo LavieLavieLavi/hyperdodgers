@@ -41,10 +41,9 @@ public class Level : MonoBehaviour
         }
 
         asteroidSpawnTimeLeft -= Time.deltaTime;
-<<<<<<< Updated upstream
+        //Updated upstream
         strikerSpawnTimeLeft -= Time.deltaTime;
-=======
 
->>>>>>> Stashed changes
+        //Stashed changes
     }
 }
