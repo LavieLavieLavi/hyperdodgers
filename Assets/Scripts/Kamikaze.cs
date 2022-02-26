@@ -34,13 +34,8 @@ public class Kamikaze : MonoBehaviour
             // hindi magsspawn sa bottom kasi that would be annoying
         }
         
-        Vector3 targetPosition;
-        try
-        {
-            targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-            Debug.Log(targetPosition);
-        }
-        catch (System.NullReferenceException e)
+        Vector3 targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        if (targetPosition == null)
         {
             targetPosition = new Vector2(
                 Random.Range(-width, width),
