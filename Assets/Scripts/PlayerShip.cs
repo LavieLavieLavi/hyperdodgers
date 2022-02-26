@@ -16,7 +16,7 @@ public class PlayerShip : MonoBehaviour
     const float EffectTimer = 2; 
     public float Inv;
 
-    bool protect
+    bool protect;
 
     void Start()
     {
