@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326dc381eadb4b0428e08038449e0e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 9152904470846786955, guid: 50299a01dc5962e459c0fc486714dc64, type: 3}
+  bullet: {fileID: 8102620872775425210, guid: cd77d3de16c869b4597347d19c5f5af2, type: 3}
 --- !u!61 &-1962375369522398145
 BoxCollider2D:
   m_ObjectHideFlags: 0
