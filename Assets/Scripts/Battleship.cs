@@ -61,6 +61,8 @@ public class Battleship : MonoBehaviour
                 Mathf.Sin(directionPolar)
             );
 
+            bullet.transform.rotation = Quaternion.Euler(0, 0, directionPolar * Mathf.Deg2Rad);
+
             Instantiate(bullet, bulletSpawnPosition + transform.position, new Quaternion());
         }
     }
