@@ -53,8 +53,6 @@ public class Battleship : MonoBehaviour
         {
             float t = (float)i / bulletsPerShot;
 
-            Debug.Log(t);
-
             float directionPolar = Mathf.Lerp(0F, bulletSpread, t) - ((90 * Mathf.Deg2Rad) + (bulletSpread/2F));
             bullet.direction = new Vector2(
                 Mathf.Cos(directionPolar),

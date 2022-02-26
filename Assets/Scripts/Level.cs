@@ -89,13 +89,13 @@ public class Level : MonoBehaviour
         kamikazeSpawnTimeLeft -= Time.deltaTime;
 
         //Powerups
-        if (bombSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 3)
+        if (bombSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 0)
         {
             Instantiate(bomb);
             bombSpawnTimeLeft = bombSpawnInterval;
         }
 
-        if (InvSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 2)
+        if (InvSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 0)
         {
             Instantiate(invincible);
             InvSpawnTimeLeft = InvSpawnInterval;
