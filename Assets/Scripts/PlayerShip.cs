@@ -19,7 +19,10 @@ public class PlayerShip : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Collision Detection");
+        if (col.gameObject.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void Update()
