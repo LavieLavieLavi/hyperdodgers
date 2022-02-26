@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inv: 0
+  blinkEffect: {fileID: -9163783929022559308, guid: b7324e03e01a3df4ebf8597df68c143b, type: 3}
 --- !u!61 &8963749968190583318
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class Bomb : MonoBehaviour
 
     GameObject[] gameObjects;
 
+    public Explosion explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,8 @@ public class Bomb : MonoBehaviour
             {
                 Destroy(gameObjects[i]);
             }
+
+            Instantiate(explosion);
         }
     }
 
