@@ -38,6 +38,6 @@ public class PlayerShip : MonoBehaviour
 
         // update rotation
         float deltaX = (transform.position.x - previousPositionX)/Time.deltaTime; // change in x per SECOND (NOT per frame)
-        transform.rotation = Quaternion.Euler(0, 0, 45 - Mathf.Clamp(deltaX, minRotation, maxRotation));
+        transform.rotation = Quaternion.Euler(0, 0, -Mathf.Clamp(deltaX, minRotation, maxRotation));
     }
 }
