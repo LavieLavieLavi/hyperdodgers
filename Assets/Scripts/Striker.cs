@@ -35,10 +35,10 @@ public class Striker : MonoBehaviour
 
         desiredPosition = new Vector2(
             Random.Range(-width, width),
-            Random.Range(0, height/2F)
+            Random.Range(height, 0)
         );
 
-        bulletSpawnPosition = new Vector2(0, -1);
+        bulletSpawnPosition = new Vector2(0, -1F);
     }
 
     void Shoot()
