@@ -37,6 +37,7 @@ public class Level : MonoBehaviour
     public Invincible invincible;
 
     public float timeSinceStart;
+    float difficultyInterval = 10;
 
     int currentScene;
 
@@ -58,25 +59,25 @@ public class Level : MonoBehaviour
     {
 
         //Enemies
-        if (asteroidSpawnTimeLeft < 0)
+        if (asteroidSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 0)
         {
             Instantiate(asteroid);
             asteroidSpawnTimeLeft = asteroidSpawnInterval;
         }
 
-        if (strikerSpawnTimeLeft < 0)
+        if (strikerSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 1)
         {
             Instantiate(striker);
             strikerSpawnTimeLeft = strikerSpawnInterval;
         }
 
-        if (battleshipSpawnTimeLeft < 0)
+        if (battleshipSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 2)
         {
             Instantiate(battleship);
             battleshipSpawnTimeLeft = battleshipSpawnInterval;
         }
 
-        if (kamikazeSpawnTimeLeft < 0)
+        if (kamikazeSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 4)
         {
             Instantiate(kamikaze);
             kamikazeSpawnTimeLeft = kamikazeSpawnInterval;
@@ -88,13 +89,13 @@ public class Level : MonoBehaviour
         kamikazeSpawnTimeLeft -= Time.deltaTime;
 
         //Powerups
-        if (bombSpawnTimeLeft < 0)
+        if (bombSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 3)
         {
             Instantiate(bomb);
             bombSpawnTimeLeft = bombSpawnInterval;
         }
 
-        if (InvSpawnTimeLeft < 0)
+        if (InvSpawnTimeLeft < 0 && timeSinceStart > difficultyInterval * 2)
         {
             Instantiate(invincible);
             InvSpawnTimeLeft = InvSpawnInterval;
@@ -103,7 +104,7 @@ public class Level : MonoBehaviour
         bombSpawnTimeLeft -= Time.deltaTime;
         InvSpawnTimeLeft -= Time.deltaTime;
 
-        if (currentScene != 0)
+        if (currentScene == 2) // main game scene
         {
             timeSinceStart += Time.deltaTime;
         }
