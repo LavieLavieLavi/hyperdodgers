@@ -18,12 +18,13 @@ public class PlayerShip : MonoBehaviour
 
     bool protect = false;
 
+
     public BlinkEffect blinkEffect;
     const float blinkCooldown = 5;
     float blinkTimer;
 
     public Timer timer;
-
+    private float HighScore;
 
     void Start()
     {
@@ -41,10 +42,6 @@ public class PlayerShip : MonoBehaviour
             }
             else
             {
-                
-                float HighScore = timer.timeStart;
-                PlayerPrefs.SetFloat("HighScore", HighScore);
-
                 Destroy(this.gameObject);
                 SceneManager.LoadScene(3);
             }

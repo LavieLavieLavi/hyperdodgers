@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public float timeStart=0;
+    public float HighScore;
     public Text textbox;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +21,7 @@ public class Timer : MonoBehaviour
     {
         timeStart += Time.deltaTime;
         textbox.text = timeStart.ToString("F2");
+
+        PlayerPrefs.SetFloat("HighScore", timeStart);
     }
 }
