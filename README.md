@@ -1,0 +1,3 @@
+Description: HyperDodgers is a sci-fi hyper-casual game wherein a ship is traversing through Space. Faced with the dangers of the enemy ships and monsters born in space, the player must dodge his way out of danger to survive. 
+
+Mechanics: The player controls a ship that has to dodge enemy ships and monsters. Players can move freely around the map, facing different kinds of enemies that shoot bullets with different bullet patterns. Unfortunately, the player can’t shoot or have any ways to fight back, focusing only to dodge to survive. The game scores you on how long you’re able to last while dodging.
